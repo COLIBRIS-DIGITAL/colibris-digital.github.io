@@ -1,0 +1,45 @@
+{% assign link_class = "" %}
+{% assign active_class = "" %}
+{% assign path = "/index.html" %}
+{% if page.url == "/index.html" %}
+{% assign link_class = "smoothScroll" %}
+{% assign active_class = "active" %}
+{% assign path = "" %}
+{% endif %}
+    <header class="header-fixed">
+      <div class="container">
+        <div class="row">
+
+          <div id="logo" class="col-xs-8 col-sm-12 col-md-5 text-center-sm text-left-xs">
+            <a href="{{site.url }}/"><img style="height:70px" src="/img/logo_header.png" alt="logo" title="logo"></a>
+          </div> <!-- /logo -->
+
+          <div id="menu" class="col-xs-4 col-sm-12 col-md-7">
+            <nav class="navbar main-menu" role="navigation">
+              <!-- Menu button for mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">menu</button>
+              </div>
+          
+              <!-- Navigation links -->
+              <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-right navbar-nav">
+                  <li><a class="{{ link_class }}" href="{{ site.url}}/#highlighted">Home</a></li>
+                  <li><a class="{{ link_class }}" href="{{ site.url}}/#services">Services</a></li>
+                  <li><a class="{{ link_class }}" href="{{ site.url}}/#portfolio">Portfolio</a></li>
+                  <li><a class="{{ link_class }}" href="{{ site.url}}/#about-us">About Us</a></li>
+                  <li><a class="{{ link_class }}" href="{{ site.url}}/#contact">Contact</a></li>
+                  <!-- {% if page.url contains "/blog/" %}
+                  <li  class="active"><a href="/blog/index.html">Blog</a></li>
+                  {% else %}
+                  <li><a href="/blog/index.html">Blog</a></li>
+                  {% endif %} -->
+                  
+                </ul>
+              </div> <!-- /navbar-collapse -->
+            </nav>
+          </div> <!-- /menu -->
+
+        </div> <!-- /row -->
+      </div> <!-- container -->
+    </header>

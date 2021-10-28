@@ -1,0 +1,57 @@
+---
+layout: default
+---
+
+<div itemscope="" itemtype="http://schema.org/BlogPosting">
+<div id="highlighted" class="bg-color-grayLight1">
+  <div class="container">
+	<div class="row">
+
+	  <div class="highlighted-blog-single col-xs-12">
+		<div class="fade-in text-center vertical-center">
+		  <h2 class="blog-single-title text-color-theme" itemprop="name headline">{{ page.title }}</h2>
+		</div>
+		<ul class="blog-post-info list-inline">
+		  <li>{{ page.author }} on {{ page.date | date_to_string }}</li>
+		  <li>
+			{{ page.categories | join: ', ' }}
+		  </li>
+		  <!--<li>2 comments</li>-->
+		</ul>
+	  </div> <!-- /highlighted-image-blog -->
+
+	</div> <!-- /row -->
+  </div> <!-- /container -->      
+</div> <!-- /highlighted -->
+
+<div id="blog-single" class="content">
+  <div class="container">
+	<div class="row">
+
+	  <div class="main-content col-xs-12 col-md-8 col-md-offset-2">
+		<div class="region">
+
+		  <div class="blog-single block">
+			<div class="blog-post">
+			  
+			  <div class="blog-single-post-content">
+				{{ content }}
+			  </div> <!-- /blog-single-post-content -->
+			  <div class="cta">
+				Technology doesn't have to be hard. We provide technology consulting to enterprises so they can concentrate on their business. <a href="{{ site.url }}/index.html#contact">Contact us</a> for help with your next technology project. 
+				<br />
+				<br />
+				Connect with Rory on 
+				<span itemprop="author" itemscope="" itemtype="http://schema.org/Person"><span itemprop="name"><a rel="author" href="{{ site.author.gplus }}?rel=author">Google +</a></span></span>.
+			  </div>
+			  
+			</div> <!-- /blog-post -->
+		  </div> <!-- /blog-content-block -->
+
+		</div> <!-- /region -->
+	  </div> <!-- /main-content -->
+
+	</div> <!-- /row -->
+  </div> <!-- /container -->
+</div> <!-- /content -->
+</div>

@@ -1,0 +1,69 @@
+---
+title: Colibris Digital - Blog
+layout: default
+---
+<div id="highlighted" class="bg-image-field">
+    <div class="container">
+        <div class="row">
+            <div class="highlighted-image-blog col-xs-12">
+                <div class="fade-in text-center vertical-center">
+                    <h1 class="blog-title text-color-theme">Blog</h1>
+                </div>
+            </div> <!-- /highlighted-image-blog -->
+        </div> <!-- /row -->
+    </div> <!-- /container -->
+</div> <!-- /highlighted -->
+<div id="blog" class="content region">
+    <div class="container">
+        <div class="row">
+
+            <div class="blog-content col-xs-12 col-md-offset-2 col-md-8 block">
+                {% for post in paginator.posts %}
+                <div class="blog-post">
+                    <h3 class="blog-post-title">{{ post.title }}</h3>
+
+                    <ul class="blog-post-info list-inline">
+                        <li>{{ post.author }} on {{ post.date | date_to_string }}</li>
+                        <!--<li>Lorem</li>
+                        <li>2 comments</li>-->
+                    </ul>
+
+                    <div class="blog-post-content">
+                        {{ post.excerpt }}
+                    </div> <!-- /blog-post-content -->
+
+                    <p class="blog-post-more"><a href="{{ post.url }}">read more</a></p>
+                </div> <!-- /blog-post -->
+                {% endfor %}
+
+                {% if paginator.total_pages > 1 %}
+                <div class="text-center">
+                    <ul class="pagination">
+                        {% if paginator.previous_page %}
+                        <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a></li>
+                        {% else %}
+                        <li class="disabled"><a href="#">&laquo;</a></li>
+                        {% endif %}
+                        {% for page in (1..paginator.total_pages) %}
+                        {% if page == paginator.page %}
+                        <li class="active"><a href="#">{{ page }}</a></li>
+                        {% elsif page == 1 %}
+                        <li><a href="{{ 'blog/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
+                        {% else %}
+                        <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+                        {% endif %}
+                        {% endfor %}
+
+                        {% if paginator.next_page %}
+                        <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a></li>
+                        {% else %}
+                        <li class="disabled"><a href="#">&raquo;</a></li>
+                        {% endif %}
+                    </ul>
+                </div> <!-- /text-center -->
+                {% endif %}
+
+            </div> <!-- /blog-content -->
+        </div> <!-- /row -->
+    </div> <!-- /container -->
+</div> <!-- /content-region -->
